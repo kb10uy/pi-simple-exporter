@@ -1,0 +1,11 @@
+[Unit]
+Description = Prometheus exporter for some SBCs.
+After = network.target
+
+[Service]
+Type = simple
+ExecStart = /usr/local/bin/pi-simple-exporter -b 0.0.0.0:9101
+KillSignal = SIGKILL
+
+[Install]
+WantedBy = multi-user.target
