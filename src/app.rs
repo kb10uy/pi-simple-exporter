@@ -6,7 +6,7 @@ use std::{
 use clap::Parser;
 use prometheus_client::{metrics::counter::Counter, registry::Registry};
 
-/// Raspi Exporter
+/// pi-simple-exporter
 #[derive(Debug, Clone, Parser)]
 #[clap(author, version)]
 pub struct Arguments {

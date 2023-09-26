@@ -1,9 +1,7 @@
 [package]
-name = "raspi-exporter"
+name = "pi-simple-exporter"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 anyhow = "1.0.75"
@@ -15,3 +13,7 @@ yarte = { version = "0.15.7", features = ["buf-min", "html-min", "bytes-buf"] }
 
 [build-dependencies]
 yarte = { version = "0.15.7", features = ["buf-min", "html-min", "bytes-buf"] }
+
+[profile.release]
+lto = "fat"
+strip = "debuginfo"

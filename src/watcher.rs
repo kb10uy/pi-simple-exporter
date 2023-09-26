@@ -8,10 +8,10 @@ use tokio::{
 };
 
 pub async fn watch_under_voltage(state: AppState) {
-    // -f              : follow logs
-    // -n 0            : surpress logs on spawn
-    // -k              : print only kernel logs
-    // -g Undervoltage : grep by Undervoltage
+    // -f     : follow logs
+    // -n 0   : surpress logs on spawn
+    // -k     : print only kernel logs
+    // -g ... : grep by Undervoltage
     let uv_follow = match Command::new("journalctl")
         .args(["-f", "-n", "0", "-k"])
         .stdin(Stdio::null())
