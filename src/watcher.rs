@@ -13,7 +13,7 @@ pub async fn watch_under_voltage(state: AppState) {
     // -k     : print only kernel logs
     // -g ... : grep by Undervoltage
     let uv_follow = match Command::new("journalctl")
-        .args(["-f", "-n", "0", "-k"])
+        .args(["-f", "-n", "0", "-k", "-g", "under.*voltage.*detected"])
         .stdin(Stdio::null())
         .stdout(Stdio::piped())
         .stderr(Stdio::inherit())

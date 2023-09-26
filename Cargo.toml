@@ -16,4 +16,4 @@ yarte = { version = "0.15.7", features = ["buf-min", "html-min", "bytes-buf"] }
 
 [profile.release]
 lto = "fat"
-strip = "debuginfo"
+strip = "symbols"
